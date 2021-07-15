@@ -1,0 +1,57 @@
+{% extends 'myapp/mobile_base.html' %}
+{% load static %}
+{% block title %}User Registration{% endblock %}
+{% block body %}
+<center>
+    <img src="{% static 'myapp/images/person.png'%}" width="75" height="75">
+<div class="container">
+    <form name="frm" role="form" action="{% url 'mobile_details_add' %}" method="post" >
+            {% csrf_token %}
+        <div class="form-group">
+			<label for="fname">Name</label>
+				<input type="text" class="form-control" name="fname" placeholder="First name" required id="fname">
+				<input type="text" class="form-control" name="lname" placeholder="Last name" required>
+		</div>
+		<!--<div class="form-group">
+			<label for="pno">Patient No</label>-->
+				<input type="hidden" class="form-control" name="pno" value="0000" required id="pno">
+		<!--</div>-->
+			 <div class="form-group">
+            <label>Gender :</label>
+			<div class="custom-control custom-radio custom-control-inline">
+  				<input type="radio" class="custom-control-input" id="gender1" name="gender" value="Male" checked>
+  				<label class="custom-control-label" for="gender1">Male</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+  				<input type="radio" class="custom-control-input" id="gender2" name="gender" value="Female">
+  				<label class="custom-control-label" for="gender2">Female</label>
+			</div>
+		</div>
+	   <div class="form-group">
+		   <label for="dob">DOB</label>
+				<input type="date" class="form-control" name="dob" placeholder="DOB" required id="dob">
+	   </div>
+	    <div class="form-group">
+			<label for="addr">Address </label>
+                <input type="text" class="form-control" name="addr" placeholder="Street" id="addr" required>
+                <input type="text" class="form-control" name="pincode" placeholder="pincode" required>
+		</div>
+	    <div class="form-group">
+			<label for="contact">Contact</label>
+				<input type="text" class="form-control" name="contact" placeholder="Enter contact" id="contact" required></td>
+		</div>
+	    <div class="form-group">
+			<label for="email">Email(Will be used as username)</label>
+			<input type="email" class="form-control" name="email" placeholder="Enter email id" id="email" required></td>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" name="password" placeholder="Enter password" required id="password"></td>
+		</div>
+		<button type="submit" class="btn btn-info" id="bt" name="bt">Register</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+            {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

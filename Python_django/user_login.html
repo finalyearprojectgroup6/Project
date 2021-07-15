@@ -1,0 +1,38 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}User Login{% endblock %}
+{% block background %}{% endblock %}
+{% block body %}
+<center>
+     <h2><font color="#366092">User Login</font></h2>
+        <img src="{% static 'myapp/images/person.png'%}" width="75" height="75">
+    <div class="container">
+        <div class="row">
+		<div class="col"></div>
+		<div class="col">
+        <form name="frm" action="{% url 'user_login' %}"
+              method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="uname">Email ID </label>
+                <input class="form-control" type="email" name="uname" id="uname" required>
+            </div>
+                <div class="form-group">
+                    <label for="passwd">Password</label>
+                    <input class="form-control" type="password" name="passwd" id="passwd" required>
+                </div>
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Login</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+            {{msg}}
+
+        </form>
+            <br/>
+            <a href="{%url 'user_details_add'%}">New User</a>
+            <br>
+            <br>
+    </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</center>
+{% endblock %}

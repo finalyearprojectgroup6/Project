@@ -1,0 +1,26 @@
+{% extends 'myapp/doctor_base.html' %}
+{% load static %}
+{% block title %}Doctor Query Reply{% endblock %}
+{% block body %}
+<center>
+    <h1>Doctor Query Reply</h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'doctor_doctor_query_update'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="reply">Remarks :</label>
+           <textarea class="form-control"  name="reply" id="reply"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="prescription">Prescription :</label>
+           <textarea class="form-control"  name="prescription" id="prescription"></textarea>
+        </div>
+
+        <input type="hidden" name="s_id" value="{{s_id}}">
+       <button type="submit" class="btn btn-info" id="bt" name="bt">Reply</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

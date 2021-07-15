@@ -1,0 +1,33 @@
+{% extends 'myapp/doctor_base.html' %}
+{% load static %}
+{% block title %}Drug Details Update{% endblock %}
+{% block body %}
+<center>
+    <h1>Drug Details Edit</h1>
+    <div class="container">
+     <form role="form" name="frm" action="{% url 'doctor_drug_master_edit'%}" method="post">
+        {% csrf_token %}
+         <div class="form-group">
+            <label for="drug_name">Drug Name :</label>
+            <input class="form-control" name="drug_name" id="drug_name" type="text"  value="{{drug_name}}">
+         </div>
+         <div class="form-group">
+            <label for="drug_details">Drug Description :</label>
+             <textarea class="form-control" name="drug_details" id="drug_details" >{{drug_details}}</textarea>
+         </div>
+         <div class="form-group">
+            <label for="company_details">Company Name :</label>
+            <input class="form-control" name="company_details" id="company_details" type="text"  value="{{company_details}}">
+         </div>
+         <div class="form-group">
+            <label for="dosage_details">Drug Content :</label>
+             <textarea class="form-control" name="dosage_details" id="dosage_details" >{{dosage_details}}</textarea>
+         </div>
+         <button type="submit" class="btn btn-info" id="bt" name="bt">Update</button>
+         <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+         <input type="hidden" name="s_id" value="{{s_id}}">
+    </form>
+    </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

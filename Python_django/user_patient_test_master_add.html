@@ -1,0 +1,20 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Patient Test Add{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Patient Test Add</font></h2>
+<div class="container">
+    <form name="frm" role="form" action="{% url 'user_patient_test_master_add' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="form-group">
+			<label for="document">Picture</label>
+			<input type="file" class="form-control" name="document" id="document"></td>
+		</div>
+	    <button type="submit" class="btn btn-info" id="bt" name="bt">Analyse</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+            {{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

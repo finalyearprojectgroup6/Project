@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register2Activity"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="26dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@drawable/person"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:text="User Registration"
+        />
+    <EditText
+        android:id="@+id/fnameET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/textView1"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/lnameET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/fnameET"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        />
+    <RadioGroup
+        android:id="@+id/genderRG"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/lnameET"
+
+        >
+        <RadioButton android:id="@+id/r1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" android:checked="true" />
+
+        <RadioButton android:id="@+id/r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/dobET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/genderRG"
+        android:hint="Date Of Birth (yyyy-mm-dd)"
+        android:inputType="date"
+
+        />
+    <EditText
+        android:id="@+id/addrET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/dobET"
+        android:hint="Address"
+        android:inputType="textPostalAddress"
+        />
+    <EditText
+        android:id="@+id/pinET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/addrET"
+        android:hint="Pincode"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/contactET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/pinET"
+        android:hint="Contact"
+        android:inputType="phone"
+        />
+    <EditText
+        android:id="@+id/unameET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/contactET"
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"
+        />
+
+    <EditText
+        android:id="@+id/passwdET"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/unameET"
+        android:inputType="textPassword"
+        android:hint="Password"
+        />
+
+    <Button
+        android:id="@+id/cancelBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textStyle="bold"
+        android:layout_below="@id/passwdET"
+        android:textSize="21dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="5dp"
+        android:textAllCaps="false"
+        android:layout_alignParentRight="true"/>
+    <Button
+        android:id="@+id/okBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textStyle="bold"
+        android:layout_below="@id/passwdET"
+        android:textSize="21dp"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@id/cancelBT"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:textAllCaps="false"/>
+
+
+</RelativeLayout>
+</ScrollView>

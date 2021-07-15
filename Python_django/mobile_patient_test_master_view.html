@@ -1,0 +1,32 @@
+{% extends 'myapp/mobile_base.html' %}
+{% load static %}
+{% block title %}Test History{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Test History</font></h2>
+<div class="container">
+    <form name="frm" action="" method="post">
+            {% csrf_token %}
+
+        {% for t in test_list %}
+            <div class="card" style="width: 21rem;">
+            <img class="card-img-top" src="../static/myapp/media/{{t.file_path }}" alt="Card image cap">
+                <div class="card-body">
+
+                <p class="card-text">
+                    <p class="text-info"><b>Date : </b>{{ t.dt }} <b>Time : </b>{{ t.tm }}</p>
+                    <p class="text-success" align="left"><b>Result : </b>{{ t.result }}</p>
+                </p>
+
+                </div>
+            </div>
+        <br>
+
+        {% endfor %}
+
+        <br/>
+{{msg}}
+    </form>
+</div>
+</center>
+{% endblock %}

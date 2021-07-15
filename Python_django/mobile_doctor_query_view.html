@@ -1,0 +1,30 @@
+{% extends 'myapp/mobile_base.html' %}
+{% load static %}
+{% block title %}Doctor Query{% endblock %}
+{% block body %}
+<center>
+    <h3>Doctor History</h3>
+    <div class="container">
+    <form role="form" name="frm" action="{% url 'user_doctor_query_view'%}" method="post">
+        {% csrf_token %}
+            {% for ql in query_list %}
+            <div class="card" style="width: 21rem;">
+                <img class="card-img-top" src="../static/myapp/media/images.png" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title" align="left">{{ ql.query }}</h6>
+
+                <p class="card-text" align="left">
+                    {{ ql.dt }} / {{ql.tm}}
+                </p>
+                <a href="../mobile_doctor_query_details_view?id={{ ql.id }}" class="card-link">Details</a>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+
+
+    </form>
+    </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

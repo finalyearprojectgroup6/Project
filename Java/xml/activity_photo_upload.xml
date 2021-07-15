@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/tvHeading"
+        android:text="Touch the icon below to select"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+
+
+    <ImageView
+        android:id="@+id/ivAttachment"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="50dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:layout_below="@id/tvHeading"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:id="@+id/rv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/ivAttachment"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Switch
+            android:id="@+id/cameraSW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Gallery"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/cameraSW"
+            android:text="Camera"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/rv1"
+        android:text="fname"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_upload"
+        android:text="Upload"
+        android:textSize="30dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:textColor="@drawable/text_color"
+
+        />
+
+</RelativeLayout>

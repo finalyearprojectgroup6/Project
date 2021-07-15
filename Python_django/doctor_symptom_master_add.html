@@ -1,0 +1,22 @@
+{% extends 'myapp/doctor_base.html' %}
+{% load static %}
+{% block title %}Symptom Add{% endblock %}
+{% block body %}
+<center>
+    <h1>State Add</h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'doctor_symptom_master_add'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="symptom_name">Symptom :</label>
+            <input class="form-control" type="text" name="symptom_name" id="symptom_name" value="">
+        </div>
+       <button type="submit"
+        class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset"
+        class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}
